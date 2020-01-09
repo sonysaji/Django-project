@@ -1,0 +1,197 @@
+*{
+	margin:0px;
+	padding:0px;
+	box-sizing:border-box;
+}
+.menu{
+	background-image:url("../img/1.jpg");
+	background-size:cover;
+	}
+.navbar{
+	text-align:center;
+	background-color:rgba(0,0,0,0.5);
+
+		
+}
+.navbar ul{
+	display:inline-flex;
+	list-style-type:none;
+
+
+}
+.navbar ul li{
+	padding:20px;
+	
+	
+}
+.navbar ul li a{
+	text-decoration:none;
+	color:white;
+   padding:20px;
+
+}
+.navbar ul li:hover{
+	background-color:grey;
+
+}
+.submenu{
+	display:none;
+	z-index:1;
+}
+
+
+.navbar ul li:hover .submenu
+{
+	
+	display:block;
+	background-color:rgba(0,0,0,0.7);
+	position:absolute;
+	margin-top:20px;
+	margin-left:25px;
+	color:red;
+	
+
+}
+.navbar ul li:hover .submenu ul
+{
+	display:inline-block;
+}
+.nav{
+	width:300px;
+	height:300px;
+	background-color:rgba(0,0,0,0.6);
+	margin-left:1000px;
+	margin-top:110px;
+	border:0.5px solid grey;
+}
+.frm{
+	padding:10px;
+	margin:10px;
+	background-color:rgba(0,0,0,0.3);
+	margin-left:50px;
+	color:white;
+	box-shadow:0px 0px 5px grey;
+}
+.frm:focus{
+	box-shadow:0px 0px 15px grey;
+}
+.nav1{
+	width:300px;
+	height:200px;
+	background-color:rgba(0,0,0,0.6);
+	margin-left:1000px;
+	margin-top:110px;
+	border:0.5px solid grey;
+}
+
+.side{
+	text-align:center;
+	background-color: rgba(0,0,0,0.6);
+	width:200px;
+	height:300px;	
+}
+.side ul{
+	list-style-type:none;
+}
+.side ul li{
+	padding:15px;
+}
+.side ul li a{
+	text-decoration:none;
+	padding:15px;
+	
+	color:white;
+
+}
+.side ul li:hover{
+	background-color:rgba(0,0,0,0.7);
+}
+
+.subside{
+	display:none;
+	z-index:1;
+
+}
+.side ul li:hover .subside{
+	
+	display:block;
+	background-color:rgba(0,0,0,0.8);
+	position:absolute;
+	margin-top:-33px;
+	margin-left:185px;
+
+}
+.freg{
+	width:400px;
+	height:690px;
+	margin-top:-200px;
+	margin-left:530px;
+	background-color: rgba(0,0,0,0.6);
+	margin-top:-266px ;
+	color:white;
+	text-align:justify;
+	border:2px solid grey;
+
+
+}
+
+.freg1{
+	width:400px;
+	height:600px;
+	margin-top:-520px;
+	margin-left:530px;
+	background-color: rgba(0,0,0,0.6);
+	margin-top:-266px ;
+	color:white;
+	text-align:justify;
+	border:2px solid grey;
+
+
+}
+
+
+.but1{
+	padding:8px;
+	background-color:rgba(0,0,0,0.8);
+	color:white;
+	box-shadow:0px 0px 5px grey;
+	margin-left:170px;
+}
+.but2{
+	padding:8px;
+	background-color:rgba(0,0,0,0.8);
+	color:white;
+	box-shadow:0px 0px 5px grey;
+	margin-left:50px;
+}
+.t{
+	margin-top:30px;
+	margin-left:10px;
+}
+.facimg{
+	background-image:url('../img/faculty.jpg');
+	background-size:cover;
+	width:500px;
+	height:500px;
+	margin-left:170px;
+	margin-top:-300px;
+}
+
+.facdet{
+	margin-left:400px;
+	margin-top:-200px;
+	width:500px;
+	background-color: rgba(0,0,0,0.8);
+
+}
+
+.freg2{
+	width:400px;
+	margin-left:400px;
+	background-color:rgba(0,0,0,0.8);
+	margin-top:-200px;
+	color:white;
+	text-align:justify;
+	border:2px solid grey;
+
+}

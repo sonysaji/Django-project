@@ -1,0 +1,29 @@
+<!doctypehtml>
+<html>
+<head>
+   
+<title>www.drop.com</title>
+<Style>
+</style>
+{% load static %}
+<link rel= "stylesheet" type="text/css" href="{% static 'css/style.css'%}">
+</head>
+<body class="bi">
+
+<div class="cont">
+<form action="{% url 'submit' %}" method="POST">
+    {% csrf_token %}
+<input type="text" placeholder="name" class="frm" name="name"></input>
+<input type="text" placeholder="email" class="frm" name="email"></input>
+<input type="text" placeholder="phoneno." class="frm" name="phoneno"></input>
+<input type="text" placeholder="username" class="frm" name="username"></input>
+<input type="text" placeholder="password" class="frm" name="password"></input>
+<input type="submit" placeholder="submit" value="submit" class="s"></input>
+<input type="reset" placeholder="reset" class="s"></input>
+<a href="{% url 'orlogin' %}">login</a>
+</form>
+</div>
+
+</div>
+</body>
+</html>

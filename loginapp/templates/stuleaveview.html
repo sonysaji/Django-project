@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>admin</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<style>
+</style>
+
+</head>
+<body class="menu">
+<div class="navbar">
+	<ul>
+		<li><a href=#>Home</a></li>
+		
+	</ul>
+</div>
+			<div class="side">
+				<ul>
+					<li><a href="#">Faculty</a>
+						<div class="subside">
+							<ul>
+								<li><a href="{% url 'facultyreg' %}">Add Faculty</a></li>
+								<li><a href="{% url 'adminfacultydeta' %}">Faculty details</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Student</a>
+						<div class="subside">
+							<ul>
+								<li><a href="{% url 'adminstudentreg'%}">Add Student</a></li>
+								<li><a href="{% url 'adminstudentdeta' %}">Student details</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href=#>Time table</a></li>
+					<li><a href=#>Leave Applications</a>
+						<div class="subside">
+							<ul>
+									<li><a href="{% url 'facleaveview' %}"> Faculty</a></li>
+									<li><a href=#> Student</a></li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<form action="{% url 'logout' %}" method="POST">
+							{% csrf_token %}
+							<input type="submit" value="logout" name="logout" >
+						</form>
+						
+					</li>	
+
+				</ul>
+            </div>	
+            
+
+            <div >
+                <h1> Student Leave Application</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>FromDate</th>
+                            <th>ToDate</th>
+                            <th>Reason</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {%if authors %}
+                        {%for i in authors %}
+                        <tr>
+                            <td>{{i.name}}</td>
+                            <td>{{i.from_date}}</td>
+                            <td>{{i.To_date}}</td>
+                            <td>{{i.reason}}</td>
+                            <td>{{i.status}}</td>
+
+                        </tr>
+
+                        {% endfor %}
+                    {% endif %}
+
+
+                    </tbody>
+
+                </table><br><br>
+                <form action="{% url 'apprv' %}" method="POST">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td> ID </td>
+                            <td>:</td>
+                            <td><input type="text" name="name"></td>
+                            <td><input type="submit" name="apprv" value="Approve"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+
+</body>
+</html>

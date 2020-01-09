@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>student home</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+<style>
+</style>
+
+</head>
+<body class="menu">
+<div class="navbar">
+	<ul>
+		<li><a href=#>Home</a></li>
+		
+	</ul>
+</div>
+			<div class="side">
+				<ul>
+					<li><a href="{% url 'studentsprofile' %}">My profile</a>
+						
+					</li>
+					
+					</li>
+					<li><a href=#>Time table</a></li>
+					<li><a href="{% url 'stuleave' %}">Leave Application</a></li>
+					<li>
+						<form action="{% url 'logout' %}" method="POST">
+							{% csrf_token %}
+							<input type="submit" value="logout" name="logout" >
+						</form>
+						
+					</li>	
+
+				</ul>
+			</div>	
+</body>
+</html>

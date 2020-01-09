@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Student leave
+		</title>
+		{% load static %}
+		<link rel="stylesheet"  href="{% static 'css/style1.css'%}">
+		
+		<style>
+
+		</style>
+	</head>
+	<body class="menu">
+		<div class="navbar">
+			<ul>
+				<li><a href=#>Home</a></li>
+				
+			</ul>
+		</div>
+			
+		<div class="side">
+			<ul>
+				<li><a href="{% url 'studentsprofile' %}">My profile</a>
+					
+				</li>
+				
+				<li><a href=#>Time table</a></li>
+				<li><a href="{%url 'stuleave' %}">Leave Application</a></li>
+				<li>
+					<form action="{% url 'logout' %}" method="POST">
+						{% csrf_token %}
+						<input type="submit" value="logout" name="logout" >
+					</form>
+					
+				</li>	
+
+			</ul>
+		</div>
+	
+		
+
+
+			<div class="freg">
+				<form action="{% url 'stuleavesubmit'%}" method="POST">
+				{% csrf_token %}
+				<table class="t">
+						<tr><td>leave_id: </td><td><input type="text" class="frm" name="leave_id"></td></tr>
+						<tr><td>name: </td><td><input type="text"  class="frm" name="name"></td></tr>
+						<tr><td>from_date: </td><td><input type="date"  class="frm" name="from_date"></td></tr>
+                        <tr><td>To_date: </td><td><input type="date" class="frm" name="To_date"></td></tr>
+						<tr><td>reason: </td><td><input type="text" class="frm"  name="reason"></td></tr>
+						<tr><td>status: </td><td><input type="text"  class="frm" name="status"></td></tr>
+                        
+				</table>
+						<br><input type="submit" class="but1" value="Submit"></input>
+						<input type="submit" class="but2" value="Cancel"></input>
+				
+				</form>
+			</div>
+				
+		</div>
+		
+		
+	</body>
+</html>

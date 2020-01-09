@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>faculty page</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+<style>
+</style>
+
+</head>
+<body class="menu">
+<div class="navbar">
+	<ul>
+		<li><a href=#>Home</a></li>
+		
+	</ul>
+</div>
+			<div class="side">
+				<ul>
+					<li><a href="{% url 'facprofile' %}">My profile</a>
+						
+					</li>
+					<li><a href="#">Student</a>
+						<div class="subside">
+							<ul>
+								<li><a href="{% url 'studentreg' %}">Add Student</a></li>
+								<li><a href=#>Student details</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="{% url 'Addattendance' %}">Add attendance</a></li>
+					<li><a href="{% url 'addmark' %}">Add Mark</a></li>
+					<li><a href="{% url 'fac_leave' %}">Leave management</a></li>
+					<li>
+						<form action="{% url 'logout' %}" method="POST">
+							{% csrf_token %}
+							<input type="submit" value="logout" name="logout" >
+						</form>
+						
+					</li>	
+
+				</ul>
+			</div>	
+</body>
+</html>

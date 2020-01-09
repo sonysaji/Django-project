@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Student profile
+		</title>
+		{% load static %}
+		<link rel="stylesheet"  href="{% static 'css/style1.css'%}">
+		
+		<style>
+
+		</style>
+	</head>
+	<body class="menu">
+		<div class="navbar">
+			<ul>
+				<li><a href=#>Home</a></li>
+			</ul>
+		</div>
+			<div class="side">
+				<ul>
+					<li><a href="{% url 'studentsprofile' %}">My profile</a>
+						
+					</li>
+					
+					<li><a href=#>Time table</a></li>
+					<li><a href="{% url 'stuleave' %}">Leave Application</a></li>
+					<li>
+						<form action="{% url 'logout' %}" method="POST">
+							{% csrf_token %}
+							<input type="submit" value="logout" name="logout" >
+						</form>
+						
+					</li>	
+				</ul>
+			</div>
+		
+
+
+			<div class="freg1">
+				<form action="{% url 'submit'%}" method="POST">
+                {% csrf_token %}
+                {%if authors%}
+                
+				<table class="t">
+						<tr><td class="frm">Student_name: </td><td class="frm">{{authors.name}}</td></tr>
+						<tr><td class="frm">E-mail_______: </td><td class="frm">{{authors.email}}</td></tr>
+                        <tr><td class="frm">Mobile_______: </td><td class="frm">{{authors.mobile}}</td></tr>
+                        <tr><td class="frm">batch________: </td><td class="frm">{{authors.batch}}</td></tr>
+                        <tr><td class="frm">dob__________: </td><td class="frm">{{authors.dob}}</td></tr>
+                        <tr><td class="frm">gender_______: </td><td class="frm">{{authors.gender}}</td></tr>
+                        <tr><td class="frm">guardian_____: </td><td class="frm">{{authors.guardian}}</td></tr>
+                        <tr><td class="frm">admission_dt : </td><td class="frm">{{authors.admission_date}}</td></tr>
+                        <tr><td class="frm">admission_no : </td><td class="frm">{{authors.admission_no}}</td></tr>
+                </table>
+                
+                {%endif %}
+					
+				
+				</form>
+			</div>
+				
+	
+		
+		
+	</body>
+</html>

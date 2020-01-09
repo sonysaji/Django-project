@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style1.css' %}">
+<style>
+</style>
+
+</head>
+<body class="menu">
+<div class="navbar">
+<ul>
+
+	<li><a href=#>Home</a></li>
+	<li><a href=#>login</a>
+		<div class="submenu">
+			<ul>
+				<li><a href="{% url 'orlogin' %}">Student</a></li>
+				<li><a href="{% url 'orlogin' %}">Faculty</a></li>
+				<li><a href="{% url 'orlogin' %}">Admin</a></li>
+			</ul>
+		</div>
+	
+	
+</ul>
+</div>
+</body>
+</html>

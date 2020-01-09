@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<title>Admin login</title>
+	{% load static %}
+	<link rel="stylesheet"  href="{% static 'css/style1.css'%}">
+</head>
+<body class="menu">
+<div class="navbar">
+<ul>
+
+	<li><a href="{% url 'index' %}">Home</a></li>
+	<li><a href=#>login</a>
+		<div class="submenu">
+			<ul>
+				<li><a href=#>Student</a></li>
+				<li><a href=#>Faculty</a></li>
+				<li><a href=#>admin</a></li>
+			</ul>
+		</div>
+	</li>
+	
+</ul>
+</div>
+	<div class="nav1">
+		<form action="{% url 'login1'%}" method="POST">
+		{% csrf_token %}
+			<input type="text" class="frm" placeholder="Username" name="username">
+			<input type="password" class="frm" placeholder="Password" name="password">
+			<input type="submit" class="frm" value="login" name="submit">
+			<input type="submit" class="frm" value="cancel" name="cancel">
+		</form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+	<title>Faculty Registration
+		</title>
+		{% load static %}
+		<link rel="stylesheet"  href="{% static 'css/style1.css'%}">
+		
+		<style>
+
+		</style>
+	</head>
+	<body class="menu">
+		<div class="navbar">
+			<ul>
+				<li><a href=#>Home</a></li>
+				
+			</ul>
+		</div>
+		<div class="side">
+			<ul>
+				<li><a href="{% url 'facprofile' %}">My profile</a>
+					
+				</li>
+				<li><a href="#">Student</a>
+					<div class="subside">
+						<ul>
+							<li><a href="{% url 'studentreg' %}">Add Student</a></li>
+							<li><a href=#>Student details</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="{% url 'Addattendance' %}">Add attendance</a></li>
+				<li><a href="{% url 'addmark' %}">Add Mark</a></li>
+				<li><a href="{% url 'fac_leave' %}">Leave Application</a></li>
+				<li>
+					<form action="{% url 'logout' %}" method="POST">
+						{% csrf_token %}
+						<input type="submit" value="logout" name="logout" >
+					</form>
+					
+				</li>	
+
+			</ul>
+		</div>
+		
+
+
+			<div class="freg">
+				<form action="{% url 'submit'%}" method="POST">
+                {% csrf_token %}
+                {%if authors%}
+                
+				<table class="t">
+						<tr><td class="frm">Faculty_name: </td><td class="frm">{{authors.name}}</td></tr><br>
+						<tr><td class="frm">    E-mail  : </td><td class="frm">{{authors.email}}</td></tr><br>
+						<tr><td class="frm">    Mobile  : </td><td class="frm">{{authors.phoneno}}</td></tr><br>
+						<tr><td class="frm">    DOB     : </td><td class="frm">{{authors.dob}}</td></tr><br>
+						<tr><td class="frm">    Batch-in-charge     : </td><td class="frm">{{authors.batch}}</td></tr>
+                        
+                </table>
+                
+                {%endif %}
+					
+				
+				</form>
+			</div>
+				
+		
+		
+		
+	</body>
+</html>
